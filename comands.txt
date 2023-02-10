@@ -1,0 +1,13 @@
+//Kontroli
+Ukazuje zmeny - git fetch;
+Interny status - git status;
+
+// Interne vkladanie (vsetky tri potrebujes v tomto poradi)
+Vlozit do commitu - git add;
+Interny commit - git commit;
+Vlozit na github - git push;
+
+//Else
+Merge reset - git reset --merge;
+Zobrat z gitu - git pull origin *Branch*;
+

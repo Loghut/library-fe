@@ -14,3 +14,7 @@ Undo last Commit - git reset --soft *branch*~
 Merge reset - git reset --merge;
 Zobrat z gitu - git pull origin *Branch*;
 
+//add Tag
+git tag *priklad-tagu*
+git push --tags
+

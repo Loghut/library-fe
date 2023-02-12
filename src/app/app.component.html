@@ -1,4 +1,11 @@
-<div>
-    <input #input (change)="checkbox(input.valueAsNumber)" type="number" [value]="vysledok"/><br>
-    <input *ngFor="let x of number" (change)="pridaj(x) "type="checkbox" [checked]="checkboard[x]"/>
+<div class="whiteText">
+    <input id="decimal" class="whiteText" #input (change)="checkbox(input.valueAsNumber)" type="number" [value]="vysledok"/><br>
+  <input (change)="pridaj(7) "type="checkbox" [checked]="checkboard[7]"/>
+  <input (change)="pridaj(6) "type="checkbox" [checked]="checkboard[6]"/>
+  <input (change)="pridaj(5) "type="checkbox" [checked]="checkboard[5]"/>
+  <input (change)="pridaj(4) "type="checkbox" [checked]="checkboard[4]"/>
+  <input (change)="pridaj(3) "type="checkbox" [checked]="checkboard[3]"/>
+  <input (change)="pridaj(2) "type="checkbox" [checked]="checkboard[2]"/>
+  <input (change)="pridaj(1) "type="checkbox" [checked]="checkboard[1]"/>
+  <input (change)="pridaj(0) "type="checkbox" [checked]="checkboard[0]"/>
 </div>

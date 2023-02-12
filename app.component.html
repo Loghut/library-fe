@@ -1,0 +1,9 @@
+<div>
+  <div>
+    <label for="desiatkove">dec</label>
+    <input id="desiatkove" #input (change)="decimalToBinary(input.valueAsNumber)" type="number" [value]="result">
+  </div><br>
+  <span><label for="binarne">bin</label>
+    <input id="binarne" *ngFor="let x of dvojka" (change)="binaryToDecimal(x)" type="checkbox" [checked]="binary[x]">
+  </span>
+</div>

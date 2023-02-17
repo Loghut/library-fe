@@ -22,6 +22,21 @@
   </div>
 <div id="books" class="books">
   <p class="White">Books</p>
+
+  <form class="White">
+    <label for="Book_Id">Id</label><br>
+    <input type="text" id="Book_Id" class="White"><br>
+    <label for="Book_Name">Name</label><br>
+    <input id="Book_Name" type="text" class="White"><br>
+    <label for="Book_Author">Author</label><br>
+    <input type="text" id="Book_Author" class="White"><br>
+    <label for="Book_Availability">Available</label><br>
+    <input type="text" id="Book_Availability" class="White"><br>
+  </form>
+  <button (click)="add_book()" class="White">Add</button>
+  <div id="zoznam_knih">
+    <li class="White list" *ngFor="let book of books; index as i">{{book}}</li>
+  </div>
 </div>
 <div id="borrowing" class="borrowing">
   <p class="White">Borrowing</p>

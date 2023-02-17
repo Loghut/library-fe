@@ -22,6 +22,21 @@ export class AppComponent {
     this.users.push(user);
     console.log(this.users);
   }
+  books: any = [];
+  add_book = () => {
+      const book_name = document.getElementById("Book_Name") as HTMLInputElement;
+      const book_id = document.getElementById("Book_Id") as HTMLInputElement;
+      const book_author = document.getElementById("Book_Author") as HTMLInputElement;
+      const book_availability = document.getElementById("Book_Availability") as HTMLInputElement;
+      let bookIdValue: string = book_id?.value;
+      let bookNameValue: string = book_name?.value;
+      let bookAuthorValue: string = book_author?.value;
+      let bookAvailabilityValue: string = book_availability?.value;
+      const book: any = [bookIdValue, bookNameValue, bookAuthorValue, bookAvailabilityValue];
+      this.books.push(book);
+      console.log(this.books);
+
+  }
 
   change = (page: string) =>{
       const users = document.getElementById('users');

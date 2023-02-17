@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    background-color: #000000;
+}
+
+.White{
+  color: white;
+  border-color: white;
+}
+
+.pl{
+  padding-left: 4px;
+}
+
+.users{
+  display: none;
+}
+
+.books{
+  display: none;
+}
+
+.borrowing{
+  display: none;
+}
+
+.list{
+  list-style: none;
+}

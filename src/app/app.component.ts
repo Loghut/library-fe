@@ -6,51 +6,53 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    cislo = [0];
-    input=0;
+  title: string = "library-fe";
 
-    checkboard = [false,false,false,false,false,false,false,false];
-    vysledok = 0;
-    checkbox(input: number): void {
-        if(input >= 255){
-          alert("Max je: 255!")
-          document.getElementById("decimal")!.outerHTML = "Error";
-          return;
-        }
-        if(input < 0){
-            alert("Zadane cislo musi byt kladne")
-            return
-        }
-        this.cislo = [];
-        this.input = input;
-        while (this.input > 0){
-            this.cislo.push(this.input % 2)
-            this.input = Math.floor(this.input/2)
-        }
-        this.checkboard=[]
-        for( let x = 0; x < 8; x++){
-            switch(this.cislo[x]){
-              case 0: this.checkboard.push(false);
-              break;
-              case 1: this.checkboard.push(true);
-              break;
-              default: this.checkboard.push(false);
-            }
-        }
-    }
 
-    pridaj(input: number){
-      this.checkboard[input] = !this.checkboard[input];
-        switch(this.checkboard[0]){
-          case true: this.vysledok = 1
-          break;
-          default: this.vysledok = 0
+  users: any = [];
+    add = () => {
+      const contacts = document.getElementById("Contact") as HTMLInputElement;
+      const name = document.getElementById("Name") as HTMLInputElement;
+      const id = document.getElementById("Id") as HTMLInputElement;
+      let IdValue:string = id?.value;
+      let NameValue:string = name?.value;
+      let ContactsValue:string = contacts?.value;
+
+    const user: any = [IdValue, NameValue, ContactsValue];
+    this.users.push(user);
+    console.log(this.users);
+  }
+
+  change = (page: string) =>{
+      const users = document.getElementById('users');
+      const books = document.getElementById('books');
+      const borrowing = document.getElementById('borrowing');
+
+      switch (page){
+        case 'users': {
+          users!.style.display = "block"
+          books!.style.display = "none"
+          borrowing!.style.display = "none"
         }
-        for(let i = 1; i<8;i++){
-            if(this.checkboard[i]){
-                this.vysledok = this.vysledok + Math.pow(2, i);
-            }
+        break;
+        case 'books': {
+          users!.style.display = "none"
+          books!.style.display = "block"
+          borrowing!.style.display = "none"
         }
-    }
+        break;
+        case 'borrowing': {
+          users!.style.display = "none"
+          books!.style.display = "none"
+          borrowing!.style.display = "block"
+        }
+        break;
+        default : {
+          users!.style.display = "none"
+          books!.style.display = "none"
+          borrowing!.style.display = "none"
+        }
+      }
+  }
 }
 

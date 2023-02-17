@@ -1,0 +1,28 @@
+*{
+    background-color: #000000;
+}
+
+.White{
+  color: white;
+  border-color: white;
+}
+
+.pl{
+  padding-left: 4px;
+}
+
+.users{
+  display: none;
+}
+
+.books{
+  display: none;
+}
+
+.borrowing{
+  display: none;
+}
+
+.list{
+  list-style: none;
+}

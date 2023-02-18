@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    poc_checkov = 8;
+    poc_checkov = 855
 
     number = Array(this.poc_checkov).fill(0).map((x,i)=>i);
 

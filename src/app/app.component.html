@@ -1,4 +1,4 @@
 <div>
     <input #input (change)="checkbox(input.valueAsNumber)" type="number" [value]="vysledok"/><br>
-    <input *ngFor="let x of number" (change)="pridaj(x) "type="checkbox" [checked]="checkboard[x]"/>
+    <input *ngFor="let x of number" (change)="pridaj(x)" type="checkbox" [checked]="checkboard[x]"/>
 </div>

@@ -1,4 +1,68 @@
-<div>
-    <input #input (change)="checkbox(input.valueAsNumber)" type="number" [value]="vysledok"/><br>
-    <input *ngFor="let x of number" (change)="pridaj(x)" type="checkbox" [checked]="checkboard[x]"/>
+<a class="White pl" (click)="change('users')">Users</a>
+<a class="White pl" (click)="change('books')">Books</a>
+<a class="White pl" (click)="change('borrowing')">Borrowing</a>
+<div id="users" class="users">
+    <form class="White">
+      <label for="Id">Id</label>
+      <br>
+      <input type="text" class="White" id="Id">
+      <br>
+      <label for="Name">Name</label>
+      <br>
+      <input class="White" id="Name">
+      <br>
+      <label for="Contact">Contact</label>
+      <br>
+      <input class="White" id="Contact">
+    </form>
+    <button (click)="add()" class="White">Add</button>
+  <div id="zoznam">
+    <li class="White list" *ngFor="let user of users;index as i">{{user}}</li>
+  </div>
+  </div>
+<div id="books" class="books">
+  <p class="White">Books</p>
+
+  <form class="White">
+    <label for="Book_Id">Id</label><br>
+    <input type="text" id="Book_Id" class="White"><br>
+    <label for="Book_Name">Name</label><br>
+    <input id="Book_Name" type="text" class="White"><br>
+    <label for="Book_Author">Author</label><br>
+    <input type="text" id="Book_Author" class="White"><br>
+    <label for="Book_Availability">Available</label><br>
+    <input type="text" id="Book_Availability" class="White"><br>
+  </form>
+  <button (click)="add_book()" class="White">Add</button>
+  <div id="zoznam_knih">
+    <li class="White list" *ngFor="let book of books; index as i">{{book}}</li>
+  </div>
+</div>
+<div id="borrowing" class="borrowing">
+  <p class="White">Borrowing</p>
+  <form class="White" [formGroup]="borrow">
+    <label for="id_bor">Id</label><br>
+    <input type="number" formControlName="id_bor" id="id_bor" class="White"><br>
+    <label for="book">Book name</label><br>
+      <select id="book" formControlName="book" class="White">
+        <option *ngFor="let x of books" value="{{x[1] + ' ' + x[2] + ' ' + x[3]}}">{{x[1] + ' ' + x[2] + ' ' + x[3]}}</option>
+      </select><br>
+    <label for="user">Borrower</label><br>
+      <select id="user" formControlName="user" class="White">
+        <option *ngFor="let x of users" value="{{x[1]}}">{{x[1]}}</option>
+      </select><br>
+  </form>
+  <button type="button" (click)="add_borr()" class="White">Add</button>
+<table *ngIf="borrowings.length" class="White">
+    <tr>
+        <th>Id</th>
+        <th>Book</th>
+        <th>Borrower</th>
+    </tr>
+    <tr *ngFor="let x of borrowings">
+        <td>{{x.id_bor}}</td>
+        <td>{{x.book}}</td>
+        <td>{{x.user}}</td>
+    </tr>
+</table>
 </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
     selector: 'app-root',
@@ -6,64 +7,86 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    poc_checkov = 855
+  title: string = "library-fe";
 
-    number = Array(this.poc_checkov).fill(0).map((x,i)=>i);
 
-    cislo = [0];
-    x=0
+  users: any = [];
+    add = () => {
+      const contacts = document.getElementById("Contact") as HTMLInputElement;
+      const name = document.getElementById("Name") as HTMLInputElement;
+      const id = document.getElementById("Id") as HTMLInputElement;
+      let IdValue:string = id?.value;
+      let NameValue:string = name?.value;
+      let ContactsValue:string = contacts?.value;
 
-    checkboard = Array(this.poc_checkov).fill(false).map(()=>false);
-    vysledok = 0;
-    limit = 0
-    checkbox(input: number): void {
-        this.limit = 0
-        for(let i = 0; i<this.poc_checkov;i++){
-            this.limit = this.limit + Math.pow(2, i)
-        }
-        if(input >= this.limit+1){
-            alert("Zadane cislo moze byt maximalne " + this.limit + "!")
-            return
-        }
-        if(input < 0){
-            alert("Zadane cislo musi byt kladne")
-            return
-        }
-        this.cislo = [];
-        this.x = input;
-        while (this.x > 0){
-            this.cislo.push(this.x % 2)
-            this.x = Math.floor(this.x/2)
-        }
-        this.checkboard=[]
-        for( let x = 0; x < this.poc_checkov; x++){
-            if(this.cislo[x] == 0){
-                this.checkboard.push(false)
-            }else if (this.cislo[x] == 1){
-                this.checkboard.push(true)
-            }else{
-                this.checkboard.push(false)
-            }
-        }
+    const user: any = [IdValue, NameValue, ContactsValue];
+    this.users.push(user);
+    console.log(this.users);
+  }
+  books: any = [];
+  add_book = () => {
+      const book_name = document.getElementById("Book_Name") as HTMLInputElement;
+      const book_id = document.getElementById("Book_Id") as HTMLInputElement;
+      const book_author = document.getElementById("Book_Author") as HTMLInputElement;
+      const book_availability = document.getElementById("Book_Availability") as HTMLInputElement;
+      let bookIdValue: string = book_id?.value;
+      let bookNameValue: string = book_name?.value;
+      let bookAuthorValue: string = book_author?.value;
+      let bookAvailabilityValue: string = book_availability?.value;
+      const book: any = [bookIdValue, bookNameValue, bookAuthorValue, bookAvailabilityValue];
+      this.books.push(book);
+      console.log(this.books);
+  }
+
+    borrow: FormGroup;
+    borrowings : Array<{
+        id_bor : number,
+        book : string,
+        user : string
+    }> =[]
+
+    constructor() {
+        this.borrow = new FormGroup({
+            id_bor: new FormControl(),
+            book: new FormControl(),
+            user: new FormControl()
+        })
+    }
+    add_borr(): void {
+        this.borrowings.push(this.borrow.value);
+        this.borrow.reset();
     }
 
-    pridaj(input: number){
-        if(this.checkboard[input]){
-            this.checkboard[input] = false
-        }else if (!this.checkboard[input]){
-            this.checkboard[input] = true
-        }
-        if(this.checkboard[0]){
-            this.vysledok = 1
-        }else{
-            this.vysledok = 0
-        }
-        for(let i = 1; i<this.poc_checkov;i++){
-            if(this.checkboard[i]){
-                this.vysledok = this.vysledok + Math.pow(2, i)
-            }
-        }
+  change = (page: string) =>{
+      const users = document.getElementById('users');
+      const books = document.getElementById('books');
+      const borrowing = document.getElementById('borrowing');
 
-    }
+      switch (page){
+        case 'users': {
+          users!.style.display = "block"
+          books!.style.display = "none"
+          borrowing!.style.display = "none"
+        }
+        break;
+        case 'books': {
+          users!.style.display = "none"
+          books!.style.display = "block"
+          borrowing!.style.display = "none"
+        }
+        break;
+        case 'borrowing': {
+          users!.style.display = "none"
+          books!.style.display = "none"
+          borrowing!.style.display = "block"
+        }
+        break;
+        default : {
+          users!.style.display = "none"
+          books!.style.display = "none"
+          borrowing!.style.display = "none"
+        }
+      }
+  }
 }
 

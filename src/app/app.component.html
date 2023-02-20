@@ -1,28 +1,7 @@
-<a class="White pl" (click)="change('users')">Users</a>
-<a class="White pl" (click)="change('books')">Books</a>
-<a class="White pl" (click)="change('borrowing')">Borrowing</a>
-<div id="users" class="users">
-    <form class="White">
-      <label for="Id">Id</label>
-      <br>
-      <input type="text" class="White" id="Id">
-      <br>
-      <label for="Name">Name</label>
-      <br>
-      <input class="White" id="Name">
-      <br>
-      <label for="Contact">Contact</label>
-      <br>
-      <input class="White" id="Contact">
-    </form>
-    <button (click)="add()" class="White">Add</button>
-  <div id="zoznam">
-    <li class="White list" *ngFor="let user of users;index as i">{{user}}</li>
-  </div>
-  </div>
-<div id="books" class="books">
-  <p class="White">Books</p>
-</div>
-<div id="borrowing" class="borrowing">
-  <p class="White">Borrowing</p>
-</div>
+<label for="users">Users
+  <input id="users" type="checkbox" (click)="use($event)">
+</label>
+<app-user-page id="userPage">
+</app-user-page>
+<app-book-page>
+</app-book-page>

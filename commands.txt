@@ -1,0 +1,16 @@
+//ADD Branch
+git checkout -b <Nazov Branche>
+git commit -m "<Message>"git push
+git push --set-upstream origin <Nazov Branche>
+
+//Push
+touch .
+git add .
+git commit -m "<Message>"
+git push
+
+//Add Tag
+git tag <Nazov Tagu>
+git push --tags
+
+//...

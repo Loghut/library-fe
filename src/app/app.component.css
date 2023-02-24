@@ -1,0 +1,7 @@
+tr td:last-child {
+    white-space:nowrap;
+}
+
+td button:first-child {
+    margin-right: 0.5rem;
+}

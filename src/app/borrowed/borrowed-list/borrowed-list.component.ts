@@ -9,4 +9,8 @@ export class BorrowedListComponent {
   title: string = "Borrowed Books"
 
   borrowed: any = [["User","Book",1],["User 2","Book 2",3] ];
+
+  borrowdAdd = () => {
+
+  }
 }

@@ -9,6 +9,9 @@ import { BooksListComponent } from './books-list/books-list.component';
   declarations: [
     BooksListComponent
   ],
+  exports: [
+    BooksListComponent
+  ],
   imports: [
     CommonModule,
     BooksRoutingModule

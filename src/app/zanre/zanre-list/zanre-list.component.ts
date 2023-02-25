@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./zanre-list.component.css']
 })
 export class ZanreListComponent {
+  title = "Genres"
 
+  protected genres: any = [["Zaner","neviem co tam este malo byt"]];
 }

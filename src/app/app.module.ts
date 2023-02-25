@@ -8,7 +8,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {UsersModule} from "./users/users.module";
 import {BooksModule} from "./books/books.module";
 import {BorrowedModule} from "./borrowed/borrowed.module";
-import {ZanreRoutingModule} from "./zanre/zanre-routing.module";
+import {ZanreModule} from "./zanre/zanre.module";
 
 @NgModule({
     declarations: [
@@ -22,7 +22,7 @@ import {ZanreRoutingModule} from "./zanre/zanre-routing.module";
         UsersModule,
         BooksModule,
         BorrowedModule,
-        ZanreRoutingModule,
+        ZanreModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

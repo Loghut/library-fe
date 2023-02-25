@@ -4,13 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { PouzivatelComponent } from './pouzivatel/pouzivatel.component';
 import {UserModel} from "./model/user.model";
+import { UserPageComponent } from './user/user-page/user-page.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        PouzivatelComponent
+        UserPageComponent
     ],
     imports: [
         BrowserModule,

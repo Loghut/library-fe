@@ -1,35 +1,9 @@
-<app-pouzivatel></app-pouzivatel>
-<user-component></user-component>
+<app-user-page></app-user-page>
+<!-- <ng-container *ngIf="User === 'Adam'">
+  <h3>POUŽÍVATELIA</h3>
 
+<router-outlet></router-outlet>
+</ng-container> -->
 
-<form [formGroup]="form">
-    <label>Meno:
-        <input type="text" placeholder="Zadajte meno" formControlName="name" />
-    </label>
-    <p class="invalid-text" *ngIf="form.controls.name.invalid">Zadajte meno</p>
-    <label>Priezvisko:
-        <input type="text" placeholder="Zadajte priezvisko" formControlName="surname"/>
-    </label>
-    <p *ngIf="form.controls.surname.errors?.required" class="invalid-text">Zadajte priezvisko</p>
-    <p *ngIf="form.controls.surname.errors?.minlength" class="invalid-text">Minimálna dĺžka priezviska sú 3 znaky</p>
-    <button (click)="savePerson()" [disabled]="form.invalid">Uložiť</button>
-</form>
-
-
-<table *ngIf="people.length">
-    <tr>
-        <th>Meno</th>
-        <th>Priezvisko</th>
-    </tr>
-    <tr *ngFor="let person of people; let i = index">
-        <td>{{person.name}}</td>
-        <td>{{person.surname}}</td>
-        <td>
-            <button (click)="editPerson(i)">Editovať</button>
-            <button (click)="deletePerson(i)">Zmazať</button>
-        </td>
-    </tr>
-</table>
-
-
+<button (click)="Test(1)">Click Me!</button>
 <router-outlet></router-outlet>

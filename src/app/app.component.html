@@ -1,9 +1,8 @@
-<app-user-page></app-user-page>
-<!-- <ng-container *ngIf="User === 'Adam'">
-  <h3>POUŽÍVATELIA</h3>
-
-<router-outlet></router-outlet>
-</ng-container> -->
-
+<h1>{{title}}</h1>
 <button (click)="Test(1)">Click Me!</button>
+<br>
+<a routerLink="./users-list">List users</a><br>
+<a routerLink="./books-list">List books</a><br>
+<a routerLink="./borrowed-list">List borrowed</a><br>
 <router-outlet></router-outlet>
+

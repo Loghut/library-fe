@@ -4,20 +4,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {UserModel} from "./model/user.model";
-import { UserPageComponent } from './user/user-page/user-page.component';
+
+import {UsersModule} from "./users/users.module";
+import {BooksModule} from "./books/books.module";
+import {BorrowedModule} from "./borrowed/borrowed.module";
 
 @NgModule({
     declarations: [
         AppComponent,
-        UserPageComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
         ReactiveFormsModule,
-        UserModel
+        UsersModule,
+        BooksModule,
+        BorrowedModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

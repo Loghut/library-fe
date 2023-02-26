@@ -1,0 +1,22 @@
+<h3>{{title}}</h3>
+<form [formGroup]="formGenre">
+  <label>ID:
+    <input type="number" placeholder="Zadajte ID" formControlName="id_genre"/>
+  </label>
+  <label>
+    Žáner:
+    <input type="text" placeholder="Zadajte žáner" formControlName="name"/>
+  </label>
+  <button (click)="saveGenre()">ULOŽ</button>
+</form>
+
+<table *ngIf="genre.length">
+  <tr>
+    <th>Id</th>
+    <th>Žaner</th>
+  </tr>
+  <tr *ngFor="let zaner of genre; let i = index">
+  <td>{{zaner.id_genre}}</td>
+  <td>{{zaner.name}}</td>
+  </tr>
+</table>

@@ -1,0 +1,26 @@
+<h3>{{title}}</h3>
+<form [formGroup]="formBook">
+  <label>ID:
+    <input type="number" placeholder="Zadajte ID" formControlName="id_book"/>
+  </label>
+  <label>
+    Meno:
+    <input type="text" placeholder="Zadajte meno knihy" formControlName="name"/>
+  </label>
+  <label>Autor:
+    <input type="text" placeholder="Zadajte autora" formControlName="autor"/>
+  </label>
+  <button (click)="saveBook()">ULOŽ</button>
+</form>
+
+<table *ngIf="books.length">
+  <tr>
+    <th>ID</th>
+    <th>Meno</th>
+    <th>Autor</th>
+  </tr>
+  <tr *ngFor="let book of books; let i = index">
+    <td>{{book.name}}</td>
+    <td>{{book.autor}}</td>
+  </tr>
+</table>

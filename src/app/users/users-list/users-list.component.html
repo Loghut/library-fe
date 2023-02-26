@@ -1,0 +1,25 @@
+<h3>{{title}}</h3>
+<form [formGroup]="formUser">
+  <label>ID:
+    <input type="number" placeholder="Zadajte ID" formControlName="id_user"/>
+  </label>
+  <label>
+    Meno:
+    <input type="text" placeholder="Zadajte meno" formControlName="name"/>
+  </label>
+  <label>Priezvisko:
+    <input type="text" placeholder="Zadajte priezvisko" formControlName="surname"/>
+  </label>
+  <button (click)="savePerson()">ULOŽ</button>
+</form>
+
+<table *ngIf="people.length">
+  <tr>
+    <th>Meno</th>
+    <th>Priezvisko</th>
+  </tr>
+  <tr *ngFor="let person of people; let i = index">
+  <td>{{person.name}}</td>
+  <td>{{person.surname}}</td>
+  </tr>
+</table>

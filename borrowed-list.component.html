@@ -1,0 +1,25 @@
+<h3>{{title}}</h3>
+<form [formGroup]="formBorrowings">
+  <label>
+    Meno:
+    <input type="text" placeholder="Zadajte meno používateľa" formControlName="name"/>
+  </label>
+  <label>Priezvisko:
+    <input type="text" placeholder="Zadajte názov knihy" formControlName="surname"/>
+  </label>
+  //TODO
+  <p *ngIf="formBorrowings.controls.surname.errors?.required" class="invalid-text">Zadajte priezvisko</p>
+  <p *ngIf="formBorrowings.controls.surname.errors?.minLength" class="invalid-text">Minimálna dĺžka priezviska sú 3 znaky</p>
+  <button (click)="saveBorrowing()"></button>
+</form>
+
+<table *ngIf="borrowings.length">
+  <tr>
+    <th>Meno</th>
+    <th>Priezvisko</th>
+  </tr>
+  <tr *ngFor="let borrowing of borrowings; let i = index">
+    <td>{{borrowing.user}}</td>
+    <td>{{borrowing.book}}</td>
+  </tr>
+</table>

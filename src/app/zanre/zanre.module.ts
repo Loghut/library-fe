@@ -9,6 +9,9 @@ import { ZanreListComponent } from './zanre-list/zanre-list.component';
   declarations: [
     ZanreListComponent
   ],
+  exports: [
+    ZanreListComponent
+  ],
   imports: [
     CommonModule,
     ZanreRoutingModule

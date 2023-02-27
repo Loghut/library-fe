@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title  = "Router App"
 
+  tets = ['xxx', 'yyy','zzz']
+
   Test = (input : number) => {
     if (input == 1){
       console.log("Test Success");

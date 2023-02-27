@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
 export class ZanreListComponent {
   title = "Genres"
 
-  protected genres: any = [["Zaner","neviem co tam este malo byt"]];
+  protected genres: string[]
+    = ["Zaner","neviem co tam este malo byt"];
+
+
+  edit = () =>{
+    this.genres.push("Ahoj");
+  }
 }

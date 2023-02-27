@@ -1,2 +1,26 @@
 <h3>{{title}}</h3>
-<p *ngFor="let user of users">{{user}}</p>
+<form [formGroup]="formUser">
+  <label>
+    Meno:
+    <input type="text" placeholder="Zadajte meno" formControlName="name"/>
+  </label>
+  <label>Priezvisko:
+    <input type="text" placeholder="Zadajte priezvisko" formControlName="surname"/>
+  </label>
+  <button (click)="saveUser()">ULOŽ</button>
+</form>
+
+<table *ngIf="people.length">
+  <tr>
+    <th>Meno</th>
+    <th>Priezvisko</th>
+  </tr>
+  <tr *ngFor="let person of people; let i = index">
+  <td>{{person.name}}</td>
+  <td>{{person.surname}}</td>
+        <td>
+            <button (click)="editUser(i)">Editovať</button>
+            <button (click)="deleteUser(i)">Zmazať</button>
+        </td>
+  </tr>
+</table>

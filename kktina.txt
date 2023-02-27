@@ -1,0 +1,21 @@
+saveGenre():void {
+    if (this.formGenre.controls.id_book.value) {
+        const index = this.user.findIndex(user => user.id_book === this.formGenre.controls.id_book.value);
+        if (index !== -1) {
+            this.user[index] = this.formGenre.value; }
+        } else {
+            this.user.push({
+              id_book: Date.now(),
+              name: this.formGenre.controls.name.value,
+              autor: this.formGenre.controls.autor.value });
+        }
+         this.formGenre.reset();
+  }
+
+  deleteGenre(index: number): void {
+        this.user.splice(index, 1);
+    }
+
+    editGenre(index: number): void {
+        this.formGenre.setValue(this.user[index]);
+    }

@@ -1,2 +1,21 @@
-<h1>{{title}}</h1>
-<p *ngFor="let genre of genres">{{genre}}</p>
+<h3>{{title}}</h3>
+<form [formGroup]="formGenre">
+  <label>
+    Žáner:
+    <input type="text" placeholder="Zadajte žáner" formControlName="name"/>
+  </label>
+  <button (click)="saveGenre()">ULOŽ</button>
+</form>
+
+<table *ngIf="genre.length">
+  <tr>
+    <th>Žaner</th>
+  </tr>
+  <tr *ngFor="let zaner of genre; let i = index">
+  <td>{{zaner.name}}</td>
+        <td>
+            <button (click)="editGenre(i)">Editovať</button>
+            <button (click)="deleteGenre(i)">Zmazať</button>
+        </td>
+  </tr>
+</table>

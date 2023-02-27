@@ -1,2 +1,26 @@
 <h3>{{title}}</h3>
-<p *ngFor="let borroweing of borrowed">{{borroweing}}</p>
+<form [formGroup]="formBorrowings">
+  <label>
+    Meno:
+    <input type="text" placeholder="Zadajte meno používateľa" formControlName="user"/>
+  </label>
+  <label>Priezvisko:
+    <input type="text" placeholder="Zadajte názov knihy" formControlName="book"/>
+  </label>
+  <button (click)="saveBorrowings()">ULOŽ</button>
+</form>
+
+<table *ngIf="borrowings.length">
+  <tr>
+    <th>Pouzivatel</th>
+    <th>Kniha</th>
+  </tr>
+  <tr *ngFor="let borrowing of borrowings; let i = index">
+    <td>{{borrowing.user}}</td>
+    <td>{{borrowing.book}}</td>
+        <td>
+            <button (click)="editBorrowings(i)">Editovať</button>
+            <button (click)="deleteBorrowings(i)">Zmazať</button>
+        </td>
+  </tr>
+</table>

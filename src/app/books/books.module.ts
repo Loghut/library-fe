@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { BooksRoutingModule } from './books-routing.module';
 import { BooksListComponent } from './books-list/books-list.component';
+import {ZanreRoutingModule} from "../zanre/zanre-routing.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -12,9 +14,11 @@ import { BooksListComponent } from './books-list/books-list.component';
   exports: [
     BooksListComponent
   ],
-  imports: [
-    CommonModule,
-    BooksRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        BooksRoutingModule,
+        ZanreRoutingModule,
+        ReactiveFormsModule
+    ]
 })
 export class BooksModule { }

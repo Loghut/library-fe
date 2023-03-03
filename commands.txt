@@ -1,6 +1,6 @@
 //ADD Branch
 git checkout -b <Nazov Branche>
-git commit -m "<Message>"git push
+git commit -m "<Message>"
 git push --set-upstream origin <Nazov Branche>
 
 //Push

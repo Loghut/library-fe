@@ -1,16 +1,42 @@
-<h1>{{title}}</h1>
-<button (click)="Test(1)">Click Me!</button><br>
+<button (click)="buttonSwitch('user')">User</button>
+<button (click)="buttonSwitch('book')">Books</button>
+<button (click)="buttonSwitch('borrowing')">Borrow</button>
+<button (click)="buttonSwitch('')">^</button>
 
-<a routerLink="./zanre-list">List zanre</a><br>
-<a routerLink="./users-list">List users</a><br>
-<a routerLink="./books-list">List books</a><br>
-<a routerLink="./borrowed-list">List borrowed</a><br>
+  <div id="userMenu">
+    <button routerLink="user-page">
+      User Page
+    </button>
+    <button routerLink="user-form">
+      User Form
+    </button>
+    <button routerLink="user-list">
+      User List
+    </button>
+  </div>
 
-<select>
-  <option *ngFor="let val of tets">{{val}}</option>
-</select>
+  <div id="bookMenu">
+    <button routerLink="book-page">
+      Book Page
+    </button>
+    <button routerLink="book-form">
+      Book Form
+    </button>
+    <button routerLink="book-list">
+      Book List
+    </button>
+  </div>
 
-<app-zanre-list></app-zanre-list>
+  <div id="borrowingMenu">
+    <button routerLink="borrowing-page">
+      Borrow Page
+    </button>
+    <button routerLink="borrowing-form">
+      Borrow Form
+    </button>
+    <button routerLink="borrowing-list">
+      Borrower List
+    </button>
+  </div>
 
 <router-outlet></router-outlet>
-

@@ -1,0 +1,13 @@
+<h1>{{title}}</h1>
+
+<form [formGroup]="form" (submit)="saveBorrow()">
+  <label>User:
+    <option *ngFor="let i of persons">{{i.name}} {{i.surname}}</option>
+  </label>
+  <label>Book:
+    <select formControlName="bookName">
+      <option *ngFor="let i of books">{{i.name}} from: {{i.author}}</option>
+    </select>
+  </label>
+  <button type="submit" [disabled]="form.invalid">Borrow</button>
+</form>

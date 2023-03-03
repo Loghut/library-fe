@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+
+<form [formGroup]="form" (submit)="saveBook()"> <!-- PRESUNUTE -->
+  <label>Meno:
+    <input type="text" formControlName="name" />
+  </label>
+  <label>Autor:
+    <input type="text" formControlName="author"/>
+  </label>
+  <button type="submit" [disabled]="form.invalid">Uložiť</button>
+</form>

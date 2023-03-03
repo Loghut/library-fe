@@ -1,30 +1,42 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UserFormComponent } from './user/user-form/user-form.component';
+import { UserPageComponent } from './user/user-page/user-page.component';
+import { UserListComponent } from './user/user-list/user-list.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {RouterModule} from "@angular/router";
+import { AppRoutingModule } from './app-routing.module';
+import { BookPageComponent } from './books/book-page/book-page.component';
+import { BookListComponent } from './books/book-list/book-list.component';
+import { BookFormComponent } from './books/book-form/book-form.component';
+import { BorrowingPageComponent } from './borrowing/borrowing-page/borrowing-page.component';
+import { BorrowingFormComponent } from './borrowing/borrowing-form/borrowing-form.component';
+import { BorrowingListComponent } from './borrowing/borrowing-list/borrowing-list.component';
 
-import {UsersModule} from "./users/users.module";
-import {BooksModule} from "./books/books.module";
-import {BorrowedModule} from "./borrowed/borrowed.module";
-import {ZanreModule} from "./zanre/zanre.module";
 
 @NgModule({
-    declarations: [
-        AppComponent,
-    ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        ReactiveFormsModule,
-        UsersModule,
-        BooksModule,
-        BorrowedModule,
-        ZanreModule,
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    UserFormComponent,
+    UserPageComponent,
+    UserListComponent,
+    BookPageComponent,
+    BookListComponent,
+    BookFormComponent,
+    BorrowingPageComponent,
+    BorrowingFormComponent,
+    BorrowingListComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+    AppRoutingModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

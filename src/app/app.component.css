@@ -1,7 +1,7 @@
-tr td:last-child {
-    white-space:nowrap;
+#userMenu{
+  display: none;
 }
 
-td button:first-child {
-    margin-right: 0.5rem;
+#bookMenu{
+  display: none;
 }

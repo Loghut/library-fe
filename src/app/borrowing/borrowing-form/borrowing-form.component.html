@@ -2,7 +2,9 @@
 
 <form [formGroup]="form" (submit)="saveBorrow()">
   <label>User:
-    <option *ngFor="let i of persons">{{i.name}} {{i.surname}}</option>
+    <select>
+      <option *ngFor="let i of persons">{{i.name}} {{i.surname}}</option>
+    </select>
   </label>
   <label>Book:
     <select formControlName="bookName">

@@ -1,10 +1,6 @@
 <h1>{{title}}</h1>
 
-<div *ngIf="borrowing == null">
-  <h3>No Registrations Yet</h3>
-</div>
-
-<div *ngFor="let i of borrowing" class="userComponent">
+<div *ngFor="let i of borrowing">
   <h4>User Name:</h4>
   <p>{{i.borrowerName}}</p>
   <h4>Book Name:</h4>

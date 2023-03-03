@@ -7,7 +7,7 @@ import {User} from "../../model/user.model";
   styleUrls: ['./user-page.component.css']
 })
 export class UserPageComponent {
-
+  
   persons: Array<User> = [];
 
   title: any = "User Page";

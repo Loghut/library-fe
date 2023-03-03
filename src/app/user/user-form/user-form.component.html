@@ -1,11 +1,11 @@
 <h1>{{title}}</h1>
 
-<form [formGroup]="form" (submit)="savePerson()"> <!-- PRESUNUTE -->
+<form [formGroup]="form" (submit)="savePerson()">
   <label>Meno:
-    <input type="text" formControlName="name" />
+    <input type="text" formControlName="name">
   </label>
   <label>Priezvisko:
-    <input type="text" formControlName="surname" />
+    <input type="text" formControlName="surname">
   </label>
   <button type="submit" [disabled]="form.invalid">Uložiť</button>
 </form>

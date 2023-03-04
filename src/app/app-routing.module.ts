@@ -23,15 +23,16 @@ const routes: Routes = [
   {path: "borrowing-form", component: BorrowingFormComponent},
   {path: "borrowing-list", component: BorrowingListComponent},
 ]
+
 @NgModule({
   exports: [
     RouterModule,
   ],
   imports: [
     RouterModule.forRoot(routes)
-
   ]
 })
+
 export class AppRoutingModule {
 
 }

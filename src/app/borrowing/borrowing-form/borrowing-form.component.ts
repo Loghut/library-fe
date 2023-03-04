@@ -38,12 +38,11 @@ export class BorrowingFormComponent {
     }
   }
 
+  @Input()
+  person?: Array<User>
 
   @Input()
-  books?: Array<Book>;
-
-  @Input()
-  persons?: Array<User>;
+  book?: Array<Book>
 
   @Output()
   formCreate = new EventEmitter<Borrowing>();

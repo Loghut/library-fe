@@ -3,12 +3,12 @@
 <form [formGroup]="form" (submit)="saveBorrow()">
   <label>User:
     <select>
-      <option *ngFor="let i of persons">{{i.name}} {{i.surname}}</option>
+      <option *ngFor="let i of person">{{i.name}} {{i}}</option>
     </select>
   </label>
   <label>Book:
     <select formControlName="bookName">
-      <option *ngFor="let i of books">{{i.name}} from: {{i.author}}</option>
+      <option *ngFor="let i of book">{{i.name}} from: {{i}}</option>
     </select>
   </label>
   <button type="submit" [disabled]="form.invalid">Borrow</button>

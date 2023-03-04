@@ -1,4 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Book} from "./model/book.model";
+import {User} from "./model/user.model";
 
 
 @Component({
@@ -36,4 +38,11 @@ export class AppComponent {
       }
     }
   }
+
+  @Input()
+  books?: Array<Book>;
+
+  @Input()
+  person?: Array<User>;
+
 }

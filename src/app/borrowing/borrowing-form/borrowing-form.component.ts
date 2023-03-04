@@ -47,4 +47,10 @@ export class BorrowingFormComponent {
 
   @Output()
   formCreate = new EventEmitter<Borrowing>();
+
+  @Input()
+  people?: Array<User>;
+
+  @Input()
+  knihy?: Array<Book>;
 }

@@ -11,7 +11,7 @@ import {BorrowingFormComponent} from "./borrowing/borrowing-form/borrowing-form.
 import {BorrowingListComponent} from "./borrowing/borrowing-list/borrowing-list.component";
 
 const routes: Routes = [
-  {path: "user-page", component: UserPageComponent},
+  {path: "user-page", component: UserPageComponent,},
   {path: "user-form", component: UserFormComponent},
   {path: "user-list", component: UserListComponent},
 

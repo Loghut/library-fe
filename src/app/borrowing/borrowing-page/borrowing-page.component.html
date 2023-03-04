@@ -1,7 +1,10 @@
 <h1>{{title}}</h1>
 
+<app-user-form (formCreate)="pushPerson($event)"></app-user-form>
+<app-book-form (formCreate)="pushBook($event)"></app-book-form>
+
 <app-borrowing-form
-  (formCreate)="borrow($event)">
+  [people]="people" [knihy]="knihy" (formCreate)="borrow($event)">
 </app-borrowing-form>
 
 

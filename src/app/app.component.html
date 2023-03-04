@@ -1,42 +1,42 @@
-<button (click)="buttonSwitch('user')">User</button>
-<button (click)="buttonSwitch('book')">Books</button>
-<button (click)="buttonSwitch('borrowing')">Borrow</button>
-<button (click)="buttonSwitch('')">^</button>
+<button routerLink="user-page">User</button>
+<button routerLink="book-page">Books</button>
+<button routerLink="borrowing-page">Borrow</button>
+<!--<button (click)="buttonSwitch('')">^</button>-->
 
-  <div id="userMenu">
-    <button routerLink="user-page">
-      User Page
-    </button>
-    <button routerLink="user-form">
-      User Form
-    </button>
-    <button routerLink="user-list">
-      User List
-    </button>
-  </div>
+<!--  <div id="userMenu">-->
+<!--    <button routerLink="user-page">-->
+<!--      User Page-->
+<!--    </button>-->
+<!--    <button routerLink="user-form">-->
+<!--      User Form-->
+<!--    </button>-->
+<!--    <button routerLink="user-list">-->
+<!--      User List-->
+<!--    </button>-->
+<!--  </div>-->
 
-  <div id="bookMenu">
-    <button routerLink="book-page">
-      Book Page
-    </button>
-    <button routerLink="book-form">
-      Book Form
-    </button>
-    <button routerLink="book-list">
-      Book List
-    </button>
-  </div>
+<!--  <div id="bookMenu">-->
+<!--    <button routerLink="book-page">-->
+<!--      Book Page-->
+<!--    </button>-->
+<!--    <button routerLink="book-form">-->
+<!--      Book Form-->
+<!--    </button>-->
+<!--    <button routerLink="book-list">-->
+<!--      Book List-->
+<!--    </button>-->
+<!--  </div>-->
 
-  <div id="borrowingMenu">
-    <button routerLink="borrowing-page">
-      Borrow Page
-    </button>
-    <button routerLink="borrowing-form">
-      Borrow Form
-    </button>
-    <button routerLink="borrowing-list">
-      Borrower List
-    </button>
-  </div>
+<!--  <div id="borrowingMenu">-->
+<!--    <button routerLink="borrowing-page">-->
+<!--      Borrow Page-->
+<!--    </button>-->
+<!--    <button routerLink="borrowing-form">-->
+<!--      Borrow Form-->
+<!--    </button>-->
+<!--    <button routerLink="borrowing-list">-->
+<!--      Borrower List-->
+<!--    </button>-->
+<!--  </div>-->
 
 <router-outlet></router-outlet>

@@ -9,7 +9,7 @@ import {Book} from "../../model/book.model";
 export class BookPageComponent {
   books: Array<Book> = [];
 
-  title: any = "User Page";
+  title: any = "Book Page";
 
 
   createBook(person: Book): void {

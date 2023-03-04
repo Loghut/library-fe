@@ -1,8 +1,34 @@
 <h1>{{title}}</h1>
 
-<div *ngFor="let i of borrowing">
-  <h4>User Name:</h4>
-  <p>{{i.borrowerName}}</p>
-  <h4>Book Name:</h4>
-  <p>{{i.bookName}}</p>
-</div>
+<table *ngIf="borrowing">
+  <tr>
+    <th>Meno</th>
+    <th>Kniha</th>
+  </tr>
+  <tr *ngFor="let borrow of borrowing; let i = index">
+    <td>{{ borrow.borrowerName}}</td>
+    <td>{{borrow.bookName}}</td>
+  </tr>
+</table>
+
+<table *ngIf="knihy">
+  <tr>
+    <th>Autor</th>
+    <th>Nazov</th>
+  </tr>
+  <tr *ngFor="let borrow of knihy; let i = index">
+    <td>{{ borrow.author}}</td>
+    <td>{{borrow.name}}</td>
+  </tr>
+</table>
+
+<table *ngIf="people">
+  <tr>
+    <th>Meno</th>
+    <th>Priezvisko</th>
+  </tr>
+  <tr *ngFor="let borrow of people; let i = index">
+    <td>{{ borrow.surname}}</td>
+    <td>{{borrow.name}}</td>
+  </tr>
+</table>

@@ -1,5 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Borrowing} from "../../model/borrowing.model";
+import {User} from "../../model/user.model";
+import {Book} from "../../model/book.model";
 
 @Component({
   selector: 'app-borrowing-list',
@@ -11,4 +13,11 @@ export class BorrowingListComponent {
 
   @Input()
   borrowing?: Array<Borrowing>;
+  @Input()
+  people?: Array<User>;
+
+  @Input()
+  knihy?: Array<Book>;
+
+
 }

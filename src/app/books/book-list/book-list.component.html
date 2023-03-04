@@ -4,9 +4,13 @@
   <h3>No Registrations Yet</h3>
 </div>
 
-<div *ngFor="let i of books" class="userComponent">
-  <h4>User Name:</h4>
-  <p>{{i.name}}</p>
-  <h4>Author Name:</h4>
-  <p>{{i.author}}</p>
-</div>
+<table *ngIf="books">
+  <tr>
+    <th>Názov</th>
+    <th>Autor</th>
+  </tr>
+  <tr *ngFor="let book of books; let i = index">
+    <td>{{book.name}}</td>
+    <td>{{book.author}}</td>
+  </tr>
+</table>

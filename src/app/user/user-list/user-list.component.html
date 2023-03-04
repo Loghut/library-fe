@@ -1,7 +1,12 @@
 <h1>{{title}}</h1>
-<div *ngFor="let i of persons">
-  <h4>User Name:</h4>
-  <p>{{i.name}}</p>
-  <h4>User Surname:</h4>
-  <p>{{i.surname}}</p>
-</div>
+
+<table *ngIf="persons">
+  <tr>
+    <th>Meno</th>
+    <th>Priezvisko</th>
+  </tr>
+  <tr *ngFor="let user of persons; let i = index">
+    <td>{{ user.name}}</td>
+    <td>{{user.surname}}</td>
+  </tr>
+</table>

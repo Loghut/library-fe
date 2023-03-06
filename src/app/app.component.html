@@ -1,9 +1,8 @@
-<button (click)="buttonSwitch('user')">User</button>
-<button (click)="buttonSwitch('book')">Books</button>
-<button (click)="buttonSwitch('borrowing')">Borrow</button>
-<button (click)="buttonSwitch('')">^</button>
+<button (click)="changeMenu(menu.Users)">User</button>
+<button (click)="changeMenu(menu.Books)">Books</button>
+<button (click)="changeMenu(menu.Borrowings)">Borrow</button>
 
-  <div id="userMenu">
+  <div *ngIf="currentMenu === menu.Users" >
     <button routerLink="user-page">
       User Page
     </button>
@@ -15,7 +14,7 @@
     </button>
   </div>
 
-  <div id="bookMenu">
+  <div *ngIf="currentMenu === menu.Books">
     <button routerLink="book-page">
       Book Page
     </button>
@@ -27,7 +26,7 @@
     </button>
   </div>
 
-  <div id="borrowingMenu">
+  <div *ngIf="currentMenu === menu.Borrowings">
     <button routerLink="borrowing-page">
       Borrow Page
     </button>

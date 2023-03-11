@@ -1,42 +1,47 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
-import { UserFormComponent } from './user/user-form/user-form.component';
-import { UserPageComponent } from './user/user-page/user-page.component';
-import { UserListComponent } from './user/user-list/user-list.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {RouterModule} from "@angular/router";
 import { AppRoutingModule } from './app-routing.module';
-import { BookPageComponent } from './books/book-page/book-page.component';
-import { BookListComponent } from './books/book-list/book-list.component';
-import { BookFormComponent } from './books/book-form/book-form.component';
+import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserPageComponent } from './user/user-page/user-page.component';
+import { UserFormComponent } from './user/user-form/user-form.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import {UserService} from "./common/service/user.service";
+import { BookPageComponent } from './book/book-page/book-page.component';
 import { BorrowingPageComponent } from './borrowing/borrowing-page/borrowing-page.component';
-import { BorrowingFormComponent } from './borrowing/borrowing-form/borrowing-form.component';
-import { BorrowingListComponent } from './borrowing/borrowing-list/borrowing-list.component';
-
+import {HttpClientModule} from '@angular/common/http';
+import {BookListComponent} from "./book/book-list/book-list.component";
+import {BookFormComponent} from "./book/book-form/book-form.component";
+import {GenrePageComponent} from "./genre/genre-page/genre-page.component";
+import {GenreFormComponent} from "./genre/genre-form/genre-form.component";
+import {GenreListComponent} from "./genre/genre-list/genre-list.component";
+import {BookService} from "./common/service/book.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserFormComponent,
     UserPageComponent,
+    UserFormComponent,
     UserListComponent,
     BookPageComponent,
     BookListComponent,
     BookFormComponent,
-    BorrowingPageComponent,
-    BorrowingFormComponent,
-    BorrowingListComponent
+    GenreListComponent,
+    GenreFormComponent,
+    GenrePageComponent,
+    BorrowingPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule,
     AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    UserService,
+    BookService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

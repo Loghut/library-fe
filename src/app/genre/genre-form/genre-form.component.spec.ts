@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BorrowingFormComponent } from './borrowing-form.component';
+import { GenreFormComponent } from './genre-form.component';
 
-describe('BorrowingFormComponent', () => {
-  let component: BorrowingFormComponent;
-  let fixture: ComponentFixture<BorrowingFormComponent>;
+describe('BookFormComponent', () => {
+  let component: GenreFormComponent;
+  let fixture: ComponentFixture<GenreFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BorrowingFormComponent ]
+      declarations: [ GenreFormComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BorrowingFormComponent);
+    fixture = TestBed.createComponent(GenreFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

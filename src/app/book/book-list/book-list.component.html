@@ -1,0 +1,19 @@
+<table *ngIf="books!=null">
+  <tr>
+    <th>Názov</th>
+    <th>Autor</th>
+    <th style="width: 20px"></th>
+  </tr>
+  <tr *ngFor="let i of books">
+    <td>{{i.name}}</td>
+    <td>{{i.author}}</td>
+    <td>
+      <button (click)="updateBook(i.id)">
+        Upraviť
+      </button>
+      <button (click)="deleteBook(i.id)">
+        Zmazať
+      </button>
+    </td>
+  </tr>
+</table>

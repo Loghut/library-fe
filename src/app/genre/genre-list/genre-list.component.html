@@ -1,0 +1,17 @@
+<table *ngIf="genres!=null">
+  <tr>
+    <th>Žánre</th>
+    <th style="width: 20px"></th>
+  </tr>
+  <tr *ngFor="let i of genres">
+    <td>{{i.zaner}}</td>
+    <td>
+      <button (click)="updateGenre(i.id)">
+        Upraviť
+      </button>
+      <button (click)="deleteGenre(i.id)">
+        Zmazať
+      </button>
+    </td>
+  </tr>
+</table>

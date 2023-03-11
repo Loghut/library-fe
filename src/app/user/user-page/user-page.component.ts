@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import {User} from "../../model/user.model";
+import {Component} from '@angular/core';
+import {User} from '../../common/model/user.model';
+import {UserService} from "../../common/service/user.service";
 
 @Component({
   selector: 'app-user-page',
@@ -10,13 +11,41 @@ export class UserPageComponent {
 
   persons: Array<User> = [];
 
-  title: any = "User Page";
+  person?: User;
+  constructor(private service: UserService) {
 
+   this.getPersons();
 
-  createPerson(person: User): void {
-    this.persons.push(person);
-    console.log('PERSONS:', this.persons);
   }
 
+  getPersons(): void {
+    this.service.getUsers().subscribe((persons: User[]) => {
+      this.persons = persons;
+    })
+  }
 
+  createPerson(person: User): void {
+    this.service.createUser(person).subscribe(person => {
+      console.log('Osoba bola úspešne uložená.');
+      this.getPersons();
+    })
+  }
+
+  selectPersonToUpdate(personId: number): void {
+    this.service.getUser(personId).subscribe((person: User) => {
+      this.person = person;
+    })
+  }
+  updatePerson(person: User): void {
+    this.service.updateUser(person).subscribe(person => {
+      console.log('Osoba bola úspešne zmenená.');
+      this.getPersons();
+    })
+  }
+  deletePerson(personId: number): void {
+    this.service.deleteUser(personId).subscribe(() => {
+      console.log('Osoba bola úspešne zmazaná.');
+      this.getPersons();
+    })
+  }
 }

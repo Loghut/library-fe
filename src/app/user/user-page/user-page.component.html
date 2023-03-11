@@ -1,8 +1,13 @@
-<h1>{{title}}</h1>
+<h3>POUŽÍVATELIA</h3>
 
 <app-user-form
-  (formCreate)="createPerson($event)">
+  [personData]="person"
+  (formCreate)="createPerson($event)"
+  (formUpdate)="updatePerson($event)">
 </app-user-form>
 
-<app-user-list [persons]="persons"></app-user-list>
-
+<app-user-list
+  [persons]="persons"
+  (personToUpdate)="selectPersonToUpdate($event)"
+  (personToDelete)="deletePerson($event)">
+</app-user-list>

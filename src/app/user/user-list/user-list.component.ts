@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {User} from "../../model/user.model";
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {User} from '../../common/model/user.model';
 
 @Component({
   selector: 'app-user-list',
@@ -7,10 +7,21 @@ import {User} from "../../model/user.model";
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent {
-  title = "User List"
 
   @Input()
-  persons?: Array<User>;
+  persons: Array<User> = [];
 
+  @Output()
+  personToUpdate = new EventEmitter<number>();
 
+  @Output()
+  personToDelete = new EventEmitter<number>();
+
+  updatePerson(userId: number): void {
+    this.personToUpdate.emit(userId);
+  }
+
+  deletePerson(userId: number): void {
+    this.personToDelete.emit(userId);
+  }
 }

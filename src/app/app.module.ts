@@ -12,6 +12,10 @@ import { BorrowingPageComponent } from './borrowing/borrowing-page/borrowing-pag
 import {HttpClientModule} from '@angular/common/http';
 import {BookListComponent} from "./book/book-list/book-list.component";
 import {BookFormComponent} from "./book/book-form/book-form.component";
+import {GenrePageComponent} from "./genre/genre-page/genre-page.component";
+import {GenreFormComponent} from "./genre/genre-form/genre-form.component";
+import {GenreListComponent} from "./genre/genre-list/genre-list.component";
+import {BookService} from "./common/service/book.service";
 
 @NgModule({
   declarations: [
@@ -22,6 +26,9 @@ import {BookFormComponent} from "./book/book-form/book-form.component";
     BookPageComponent,
     BookListComponent,
     BookFormComponent,
+    GenreListComponent,
+    GenreFormComponent,
+    GenrePageComponent,
     BorrowingPageComponent
   ],
   imports: [
@@ -32,6 +39,8 @@ import {BookFormComponent} from "./book/book-form/book-form.component";
     HttpClientModule
   ],
   providers: [
+    UserService,
+    BookService
     UserService
   ],
   bootstrap: [AppComponent]

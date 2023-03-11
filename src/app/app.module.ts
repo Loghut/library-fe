@@ -41,6 +41,7 @@ import {BookService} from "./common/service/book.service";
   providers: [
     UserService,
     BookService
+    UserService
   ],
   bootstrap: [AppComponent]
 })

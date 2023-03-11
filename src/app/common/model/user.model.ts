@@ -4,3 +4,8 @@ export interface User {
   lastName: string
 }
 
+export enum Menu {
+  BOOKS = 'BOOKS',
+  USERS = 'USERS',
+  BORROWINGS = 'BORROWINGS'
+}

@@ -1,0 +1,19 @@
+<table *ngIf="borrowings.length">
+  <tr>
+    <th>Používateľ</th>
+    <th>Kniha</th>
+    <th style="width: 20px"></th>
+  </tr>
+  <tr *ngFor="let borrowing of borrowings">
+    <td>{{ borrowing.user }}</td>
+    <td>{{ borrowing.book }}</td>
+    <td>
+      <button (click)="updateBorrowing(borrowing.id)">
+        Upraviť
+      </button>
+      <button (click)="deleteBorrowing(borrowing.id)">
+        Zmazať
+      </button>
+    </td>
+  </tr>
+</table>

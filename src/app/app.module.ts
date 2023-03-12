@@ -16,6 +16,10 @@ import {GenrePageComponent} from "./genre/genre-page/genre-page.component";
 import {GenreFormComponent} from "./genre/genre-form/genre-form.component";
 import {GenreListComponent} from "./genre/genre-list/genre-list.component";
 import {BookService} from "./common/service/book.service";
+import {GenreService} from "./common/service/genre.service";
+import {BorrowingService} from "./common/service/borrowing.service";
+import {BorrowingFormComponent} from "./borrowing/borrowing-form/borrowing-form.component";
+import {BorrowingListComponent} from "./borrowing/borrowing-list/borrowing-list.component";
 
 @NgModule({
   declarations: [
@@ -29,7 +33,9 @@ import {BookService} from "./common/service/book.service";
     GenreListComponent,
     GenreFormComponent,
     GenrePageComponent,
-    BorrowingPageComponent
+    BorrowingPageComponent,
+    BorrowingListComponent,
+    BorrowingFormComponent
   ],
   imports: [
     BrowserModule,
@@ -40,8 +46,9 @@ import {BookService} from "./common/service/book.service";
   ],
   providers: [
     UserService,
-    BookService
-    UserService
+    BookService,
+    GenreService,
+    BorrowingService
   ],
   bootstrap: [AppComponent]
 })

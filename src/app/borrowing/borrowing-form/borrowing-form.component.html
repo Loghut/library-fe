@@ -1,0 +1,9 @@
+<form [formGroup]="form" (submit)="saveBorrowing()"> <!-- PRESUNUTE -->
+  <label>Používateľ:
+    <input type="text" formControlName="user" />
+  </label>
+  <label>Kniha:
+    <input type="text" formControlName="book" />
+  </label>
+  <button type="submit" [disabled]="form.invalid">Uložiť</button>
+</form>

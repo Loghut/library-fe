@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BorrowingPageComponent } from './borrowing-page.component';
+import { BorrowingListComponent } from './borrowing-list.component';
 
-describe('UserPageComponent', () => {
-  let component: BorrowingPageComponent;
-  let fixture: ComponentFixture<BorrowingPageComponent>;
+describe('UserListComponent', () => {
+  let component: BorrowingListComponent;
+  let fixture: ComponentFixture<BorrowingListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BorrowingPageComponent ]
+      declarations: [ BorrowingListComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BorrowingPageComponent);
+    fixture = TestBed.createComponent(BorrowingListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

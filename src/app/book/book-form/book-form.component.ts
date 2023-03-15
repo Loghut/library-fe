@@ -27,8 +27,11 @@ export class BookFormComponent {
   constructor() {
     this.form = new FormGroup({
       id: new FormControl(null),
-      name: new FormControl(null, Validators.required),
-      author: new FormControl(null, [Validators.required, Validators.minLength(3)])
+      authorFirstName: new FormControl(null, Validators.required),
+      authorLastName: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      title: new FormControl(null, Validators.required),
+      isbn: new FormControl(null, Validators.required),
+      count: new FormControl(null)
     })
   }
 
@@ -47,8 +50,11 @@ export class BookFormComponent {
   private prepareBook(id?: number): Book {
     return {
       id: id !== undefined ? id : Date.now(),
-      name: this.form.controls.name.value,
-      author: this.form.controls.author.value,
+      authorFirstName: this.form.controls.authorFirstName.value,
+      authorLastName: this.form.controls.authorLastName.value,
+      title: this.form.controls.title.value,
+      isbn: this.form.controls.isbn.value,
+      count: this.form.controls.count.value
     };
   }
 }

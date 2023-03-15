@@ -8,7 +8,7 @@ import {User} from "../model/user.model";
 @Injectable()
 export class UserService {
   private url =
-    'http://localhost:8080/api/customers';
+    'http://labs.fpv.umb.sk:8081/api/customer';
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<User[]> {

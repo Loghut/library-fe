@@ -1,6 +1,6 @@
 <form [formGroup]="form" (submit)="saveGenre()"> <!-- PRESUNUTE -->
   <label>Žáner:
-    <input type="text" formControlName="zaner" />
+    <input type="text" formControlName="name" />
   </label>
   <button type="submit" [disabled]="form.invalid">Uložiť</button>
 </form>

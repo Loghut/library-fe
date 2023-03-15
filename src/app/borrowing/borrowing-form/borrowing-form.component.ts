@@ -27,8 +27,8 @@ export class BorrowingFormComponent {
   constructor() {
     this.form = new FormGroup({
       id: new FormControl(null),
-      book: new FormControl(null, Validators.required),
-      user: new FormControl(null, [Validators.required, Validators.minLength(3)])
+      bookId: new FormControl(null, Validators.required),
+      customerId: new FormControl(null, [Validators.required, Validators.minLength(3)])
     })
   }
 
@@ -47,8 +47,8 @@ export class BorrowingFormComponent {
   private prepareBorrowing(id?: number): Borrowing {
     return {
       id: id !== undefined ? id : Date.now(),
-      book: this.form.controls.book.value,
-      user: this.form.controls.user.value,
+      bookId: this.form.controls.bookId.value,
+      customerId: this.form.controls.customerId.value,
     };
   }
 }

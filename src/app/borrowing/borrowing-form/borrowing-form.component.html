@@ -1,9 +1,9 @@
 <form [formGroup]="form" (submit)="saveBorrowing()"> <!-- PRESUNUTE -->
   <label>Používateľ:
-    <input type="text" formControlName="user" />
+    <input type="number" formControlName="customerId" />
   </label>
   <label>Kniha:
-    <input type="text" formControlName="book" />
+    <input type="number" formControlName="bookId" />
   </label>
   <button type="submit" [disabled]="form.invalid">Uložiť</button>
 </form>

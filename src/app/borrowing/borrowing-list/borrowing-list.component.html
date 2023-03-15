@@ -5,8 +5,8 @@
     <th style="width: 20px"></th>
   </tr>
   <tr *ngFor="let borrowing of borrowings">
-    <td>{{ borrowing.user }}</td>
-    <td>{{ borrowing.book }}</td>
+    <td>{{ borrowing.customerId }}</td>
+    <td>{{ borrowing.bookId }}</td>
     <td>
       <button (click)="updateBorrowing(borrowing.id)">
         Upraviť

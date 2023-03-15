@@ -1,7 +1,8 @@
 export interface User {
   id: number,
   firstName: string;
-  lastName: string
+  lastName: string;
+  contact: string;
 }
 
 export enum Menu {

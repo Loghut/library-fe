@@ -8,7 +8,7 @@ import {Borrowing} from "../model/borrowing.model";
 @Injectable()
 export class BorrowingService {
   private url =
-    'http://localhost:8080/api/borrowings';
+    'http://labs.fpv.umb.sk:8081/api/borrowing';
   constructor(private http: HttpClient) { }
 
   getBorrowings(): Observable<Borrowing[]> {

@@ -8,7 +8,7 @@ import {Genre} from "../model/genre.model";
 @Injectable()
 export class GenreService {
   private url =
-    'http://localhost:8080/api/genres';
+    'http://labs.fpv.umb.sk:8081/api/category';
   constructor(private http: HttpClient) { }
 
   getGenres(): Observable<Genre[]> {

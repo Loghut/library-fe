@@ -1,12 +1,18 @@
 <table *ngIf="books!=null">
   <tr>
-    <th>Názov</th>
-    <th>Autor</th>
+    <th>Meno autora</th>
+    <th>Priezvisko autora</th>
+    <th>Názov knihy</th>
+    <th>ISBN</th>
+    <th>Počet kníh</th>
     <th style="width: 20px"></th>
   </tr>
   <tr *ngFor="let i of books">
-    <td>{{i.name}}</td>
-    <td>{{i.author}}</td>
+    <td>{{i.authorFirstName}}</td>
+    <td>{{i.authorLastName}}</td>
+    <td>{{i.title}}</td>
+    <td>{{i.isbn}}</td>
+    <td>{{i.count}}</td>
     <td>
       <button (click)="updateBook(i.id)">
         Upraviť

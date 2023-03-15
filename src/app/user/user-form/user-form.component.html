@@ -15,6 +15,9 @@
   <p *ngIf="(form.controls.lastName.touched || form.controls.lastName.dirty) && form.controls.lastName.errors?.minlength" class="invalid-text">
     Minimálna dĺžka priezviska sú 3 znaky
   </p>
+  <label>Kontakt:
+    <input type="text" formControlName="contact" [class.invalid-input]="form.controls.contact.invalid && (form.controls.contact.touched || form.controls.contact.dirty)" />
+  </label>
 
   <button type="submit" [disabled]="form.invalid">Uložiť</button>
   <button type="reset">Zrušiť</button>

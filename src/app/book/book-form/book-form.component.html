@@ -1,9 +1,18 @@
 <form [formGroup]="form" (submit)="saveBook()"> <!-- PRESUNUTE -->
-  <label>Meno:
-    <input type="text" formControlName="name" />
+  <label>Meno autora:
+    <input type="text" formControlName="authorFirstName" />
   </label>
-  <label>Autor:
-    <input type="text" formControlName="author"/>
+  <label>Priezvisko autora:
+    <input type="text" formControlName="authorLastName"/>
+  </label>
+  <label>Názov knihy:
+    <input type="text" formControlName="title"/>
+  </label>
+  <label>ISBN:
+    <input type="text" formControlName="isbn"/>
+  </label>
+  <label>Počet kníh:
+    <input type="number" formControlName="count"/>
   </label>
   <button type="submit" [disabled]="form.invalid">Uložiť</button>
 </form>

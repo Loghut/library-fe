@@ -8,7 +8,7 @@ import {Book} from "../model/book.model";
 @Injectable()
 export class BookService {
   private url =
-    'http://localhost:8080/api/books';
+    'http://labs.fpv.umb.sk:8081/api/book';
   constructor(private http: HttpClient) { }
 
   getBooks(): Observable<Book[]> {

@@ -27,7 +27,8 @@ export class UserFormComponent {
     this.form = new FormGroup({
       id: new FormControl(null),
       firstName: new FormControl(null, Validators.required),
-      lastName: new FormControl(null, [Validators.required, Validators.minLength(3)])
+      lastName: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      contact: new FormControl(null, Validators.required),
     })
   }
 
@@ -48,6 +49,7 @@ export class UserFormComponent {
       id: id !== undefined ? id : Date.now(),
       firstName: this.form.controls.firstName.value,
       lastName: this.form.controls.lastName.value,
+      contact: this.form.controls.contact.value
     };
   }
 }

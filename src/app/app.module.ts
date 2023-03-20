@@ -20,6 +20,10 @@ import {GenreService} from "./common/service/genre.service";
 import {BorrowingService} from "./common/service/borrowing.service";
 import {BorrowingFormComponent} from "./borrowing/borrowing-form/borrowing-form.component";
 import {BorrowingListComponent} from "./borrowing/borrowing-list/borrowing-list.component";
+import {AngularToastifyModule, ToastService} from "angular-toastify";
+import {Toast} from "angular-toastify/lib/toast";
+import { UserDetailPageComponent } from './user/user-detail-page/user-detail-page.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -35,21 +39,26 @@ import {BorrowingListComponent} from "./borrowing/borrowing-list/borrowing-list.
     GenrePageComponent,
     BorrowingPageComponent,
     BorrowingListComponent,
-    BorrowingFormComponent
+    BorrowingFormComponent,
+    UserDetailPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularToastifyModule,
+    NgbModule
   ],
   providers: [
     UserService,
     BookService,
     GenreService,
-    BorrowingService
+    BorrowingService,
+    ToastService
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

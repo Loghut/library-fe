@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input,Output} from '@angular/core';
 import {Borrowing} from "../../common/model/borrowing.model";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {User} from "../../common/model/user.model";
 
 @Component({
   selector: 'app-borrowing-form',
@@ -10,17 +11,14 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 export class BorrowingFormComponent {
 
   @Input()
+  users?: User[];
+
+  @Input()
   set borrowingData(borrowing: Borrowing | undefined) {
     if (borrowing) {
       this.form.setValue(borrowing);
     }
   }
-
-  @Output()
-  formCreate = new EventEmitter<Borrowing>();
-
-  @Output()
-  formUpdate = new EventEmitter<Borrowing>();
 
   form: FormGroup;
 
@@ -31,7 +29,6 @@ export class BorrowingFormComponent {
       user: new FormControl(null, [Validators.required, Validators.minLength(3)])
     })
   }
-
 
   saveBorrowing(): void {
     if (this.form.valid) {
@@ -44,6 +41,7 @@ export class BorrowingFormComponent {
     }
   }
 
+
   private prepareBorrowing(id?: number): Borrowing {
     return {
       id: id !== undefined ? id : Date.now(),
@@ -51,4 +49,10 @@ export class BorrowingFormComponent {
       user: this.form.controls.user.value,
     };
   }
+
+  @Output()
+  formCreate = new EventEmitter<Borrowing>();
+
+  @Output()
+  formUpdate = new EventEmitter<Borrowing>();
 }

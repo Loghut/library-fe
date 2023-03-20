@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {Borrowing} from '../../common/model/borrowing.model';
 import {BorrowingService} from "../../common/service/borrowing.service";
+import {User} from "../../common/model/user.model";
+import {UserService} from "../../common/service/user.service";
 
 @Component({
   selector: 'app-borrowing-page',
@@ -9,11 +11,13 @@ import {BorrowingService} from "../../common/service/borrowing.service";
 })
 export class BorrowingPageComponent {
 
+  users?: User[];
+
   borrowings: Array<Borrowing> = [];
 
   borrowing?: Borrowing;
-  constructor(private service: BorrowingService) {
-
+  constructor(private service: BorrowingService, private userService: UserService) {
+    this.getUsers();
    this.getBorrowings();
 
   }
@@ -46,6 +50,12 @@ export class BorrowingPageComponent {
     this.service.deleteBorrowing(borrowingId).subscribe(() => {
       console.log('Borrowing bol úspešne zmazaný.');
       this.getBorrowings();
+    })
+  }
+
+  getUsers(): void {
+    this.userService.getUsers().subscribe((user :User[]) => {
+      this.users = user;
     })
   }
 }

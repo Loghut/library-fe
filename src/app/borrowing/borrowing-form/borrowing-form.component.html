@@ -1,9 +1,11 @@
-<form [formGroup]="form" (submit)="saveBorrowing()"> <!-- PRESUNUTE -->
+<form [formGroup]="form" (submit)="saveBorrowing()">
   <label>Používateľ:
-    <input type="text" formControlName="user" />
+    <select type="text" formControlName="user">
+      <option *ngFor="let user of users" [value]="user.id">
+        {{ user.firstName + ' ' + user.lastName }}
+      </option>
+    </select>
   </label>
-  <label>Kniha:
-    <input type="text" formControlName="book" />
-  </label>
+  ...
   <button type="submit" [disabled]="form.invalid">Uložiť</button>
 </form>
